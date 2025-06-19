@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.chatbot.ChatbotController"
+      prefHeight="700.0"
+      prefWidth="1000.0"
+      style="-fx-background-color: #f8f9fa;">
+   <children>
+      <!-- Header -->
+      <VBox style="-fx-background-color: #175ca0;" VBox.vgrow="NEVER" maxHeight="180">
+         <padding>
+            <Insets top="20" right="30" bottom="20" left="30" />
+         </padding>
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="25" HBox.hgrow="ALWAYS">
+               <!-- Logo Space -->
+               <ImageView fx:id="logoImage" fitHeight="70.0" fitWidth="70.0" preserveRatio="true"
+                         style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 8;">
+                  <HBox.margin>
+                     <Insets right="15" />
+                  </HBox.margin>
+               </ImageView>
+               
+               <!-- Title and Subtitle -->
+               <VBox spacing="8" HBox.hgrow="ALWAYS">
+                  <Text fill="white" style="-fx-font-weight: bold;" text="Disaster Relief Assistant">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#ffffff" text="Your 24/7 assistant for disaster response and recovery. Ask about emergency contacts, nearby shelters, medical helplines, disaster statistics, and more."
+                        style="-fx-wrap-text: true;">
+                     <font>
+                        <Font name="System" size="15.0" />
+                     </font>
+                  </Text>
+               </VBox>
+            </HBox>
+         </children>
+      </VBox>
+
+      <!-- Chat Area -->
+      <ScrollPane fx:id="chatScrollPane" fitToWidth="true" VBox.vgrow="ALWAYS"
+                  style="-fx-background: transparent; -fx-background-color: transparent;">
+         <content>
+            <VBox fx:id="chatContainer" spacing="15" style="-fx-background-color: transparent;">
+               <padding>
+                  <Insets top="25" right="25" bottom="25" left="25" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+
+      <!-- Loading Spinner -->
+      <HBox fx:id="loadingBox" alignment="CENTER_LEFT" visible="false" managed="false"
+            style="-fx-padding: 10;">
+         <children>
+            <ProgressIndicator fx:id="loadingSpinner" prefHeight="25.0" prefWidth="25.0" 
+                             style="-fx-progress-color: #ff8c00;" />
+            <Text text="Loading response..." style="-fx-font-size: 14px; -fx-fill: #ff8c00;">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Text>
+         </children>
+         <padding>
+            <Insets left="25" bottom="10" />
+         </padding>
+      </HBox>
+
+      <!-- Suggestion Bubbles -->
+      <HBox spacing="15" alignment="CENTER_LEFT" style="-fx-padding: 0 30 15 30;">
+         <children>
+            <HBox style="-fx-background-color: rgba(255,140,0,0.1); -fx-background-radius: 20; -fx-padding: 10 20; -fx-cursor: hand;"
+                  onMouseClicked="#handleSuggestionClick">
+               <Text text="Where is the nearest shelter?" fill="#175ca0" style="-fx-opacity: 0.8;">
+                  <font>
+                     <Font name="System" size="14.0" />
+                  </font>
+               </Text>
+            </HBox>
+            <HBox style="-fx-background-color: rgba(255,140,0,0.1); -fx-background-radius: 20; -fx-padding: 10 20; -fx-cursor: hand;"
+                  onMouseClicked="#handleSuggestionClick">
+               <Text text="Emergency helpline numbers" fill="#175ca0" style="-fx-opacity: 0.8;">
+                  <font>
+                     <Font name="System" size="14.0" />
+                  </font>
+               </Text>
+            </HBox>
+            <HBox style="-fx-background-color: rgba(255,140,0,0.1); -fx-background-radius: 20; -fx-padding: 10 20; -fx-cursor: hand;"
+                  onMouseClicked="#handleSuggestionClick">
+               <Text text="Hospitals in Karachi" fill="#175ca0" style="-fx-opacity: 0.8;">
+                  <font>
+                     <Font name="System" size="14.0" />
+                  </font>
+               </Text>
+            </HBox>
+            <HBox style="-fx-background-color: rgba(255,140,0,0.1); -fx-background-radius: 20; -fx-padding: 10 20; -fx-cursor: hand;"
+                  onMouseClicked="#handleSuggestionClick">
+               <Text text="Flood data for Waziristan" fill="#175ca0" style="-fx-opacity: 0.8;">
+                  <font>
+                     <Font name="System" size="14.0" />
+                  </font>
+               </Text>
+            </HBox>
+            <HBox style="-fx-background-color: rgba(255,140,0,0.1); -fx-background-radius: 20; -fx-padding: 10 20; -fx-cursor: hand;"
+                  onMouseClicked="#handleSuggestionClick">
+               <Text text="Earthquakes after 2005" fill="#175ca0" style="-fx-opacity: 0.8;">
+                  <font>
+                     <Font name="System" size="14.0" />
+                  </font>
+               </Text>
+            </HBox>
+         </children>
+      </HBox>
+
+      <!-- Input Area -->
+      <HBox spacing="15" style="-fx-background-color: white; -fx-effect: dropshadow(gaussian, rgba(23,92,160,0.1), 10, 0, 0, -2);"
+            alignment="CENTER">
+         <padding>
+            <Insets top="20" right="20" bottom="20" left="20" />
+         </padding>
+         <children>
+            <TextField fx:id="messageInput" HBox.hgrow="ALWAYS"
+                       style="-fx-background-color: #f8f9fa; -fx-background-radius: 25; -fx-padding: 15 25; -fx-border-color: #e3f2fd; -fx-border-radius: 25; -fx-border-width: 1;"
+                       promptText="Type your message here...">
+               <font>
+                  <Font name="System" size="16.0" />
+               </font>
+            </TextField>
+            <Button fx:id="sendButton" mnemonicParsing="false"
+                    style="-fx-background-color: #ff8c00; -fx-background-radius: 25; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(255,140,0,0.3), 5, 0, 0, 2);"
+                    text="Send" textFill="WHITE" minWidth="100.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>
