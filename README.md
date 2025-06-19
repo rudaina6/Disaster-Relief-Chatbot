@@ -29,7 +29,7 @@ A Java-based chatbot that provides emergency disaster information such as shelte
 - **OpenAI API** – for NLP capabilities
 - **dotenv-java** – to load environment variables securely
 
-## 🚀 Getting Started
+## 🚀 To set up the Project
 
 ### 1. Clone the Repository
 
@@ -59,3 +59,4 @@ Use the provided SQL script in chatbot_db.sql and run it in MySQL Workbench or C
 📊 Add dashboard UI for statistical summaries
 
 🗣️ Enable multilingual support
+
