@@ -2,15 +2,15 @@
 
 A Java-based chatbot that provides emergency disaster information such as shelter locations, emergency contacts, and disaster statistics. It integrates with a MySQL database to simulate the retrieval of data from a continually updating source. It also uses the OpenAI API to intelligently process queries.
 
-## 🌟 Features
+## Features
 
-- 🔍 Query emergency information for floods, droughts, epidemics, and earthquakes
-- 🗂 Access shelter locations and emergency contacts by region
-- 🧠 Uses OpenAI's GPT API for smart query processing
-- 💬 Conversational interface via JavaFX
-- 🛠 Built with OOP design principles (modular and extensible)
+- Query emergency information for floods, droughts, epidemics, and earthquakes
+- Access shelter locations and emergency contacts by region
+- Uses OpenAI's GPT API for smart query processing
+- Conversational interface using JavaFX
+- Built with OOP design principles 
 
-## 🖼️ UI Preview
+## UI Preview
 
 > ![image](https://github.com/user-attachments/assets/85b3e3a5-589d-49a0-9b78-58804967c609)
 >
@@ -20,7 +20,7 @@ A Java-based chatbot that provides emergency disaster information such as shelte
 > 
 > ![image](https://github.com/user-attachments/assets/0203fb7d-cbbc-4c18-9fed-df7aea725ccd)
 
-## ⚙️ Technologies Used
+## Technologies Used - Development Stack
 
 - **Java (OOP)**
 - **JavaFX** – for GUI
@@ -29,7 +29,7 @@ A Java-based chatbot that provides emergency disaster information such as shelte
 - **OpenAI API** – for NLP capabilities
 - **dotenv-java** – to load environment variables securely
 
-## 🚀 To set up the Project
+## To set up the Project
 
 ### 1. Clone the Repository
 
